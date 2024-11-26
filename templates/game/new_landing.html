@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="auth-box">
+    <div class="">       
+        <div class="text-center">
+            <a href="javascript:void(0);" class="auth-logo">
+                <img src="{% static 'images/Title-Png.png' %}" class="img-fluid" alt="Irugapatru Game">
+            </a>
+        </div>    
+    </div>
+
+    <div class="mb-3  pb-3 text-center">
+        <h4 class="fw-normal"><span class="fw-bold" style="color:#1a1657;">Release Date: October
+                6, 2023 </span></h4>
+    </div>
+
+    <div class="mb-6 mt-6 pb-3 text-center"
+        style="border-top:1px dashed #1a1664;border-bottom:1px dashed #1a1664; padding:10px;">
+        <h4><span style="color:#1a1657;">The Gap-Social Experiment Game</span></h4>
+        <div class="textstyle">Try for yourself with your partner a litmus test on where you
+            stand in your relationship.
+            <br>It is intended to identify, work on and strengthen your bonding.<br>
+            <h5 class="fw-normal"><span class="fw-bold" style="color:#1a1657;">Grab it stronger
+                    (இறுகப்பற்று)</span></h5>
+        </div>
+    </div>
+    <h4 style="color:#1a1657; margin-top:20px;"><span>New Users </span></h4>
+    <div class="mb-3 mt-3 pb-3 register-sec">
+
+        <ul class="intro-section">
+            <li>Register & Share the link to your partner.</li>
+            <li>Start the game.</li>
+            <li>Try the game simultaneously along with your partner.</li>
+        </ul>
+    </div>
+    <div class="mb-3 pb-3 text-center">
+        <a href="{% url 'signup' %}">
+            <button class="btn btn-dark shadow-none w-100">Register & Start New Game</button>
+        </a>
+    </div>
+    
+ 
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+{% endblock %}

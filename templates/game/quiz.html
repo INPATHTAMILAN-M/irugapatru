@@ -1,0 +1,391 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Irugapatru Game</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Themesdesign" />
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialdesignicons.min.css' %}" />
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SDR9B51YLE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SDR9B51YLE');
+</script>
+<style>
+    .col-1{
+        width: 6.233333%;
+    }
+    .container{
+            width:82%;
+        }
+    .auth-box{
+        padding: 50px 50px;
+    }
+        @media (max-width: 425px){
+            .container{
+                width:100%
+            }
+            .auth-box{
+                padding: 0px 0px;
+            }
+        }
+    .auth-content{
+        margin-top:5%;
+    }
+    p{
+        font-size:unset !important;
+    }
+
+    
+</style>
+</head>
+
+<body>
+    <!-- START -->
+    <div class="account-pages" style="height:82vh !important">
+        <div class="container">
+            <div class="row g-0 bg-white align-items-center">
+                <div class="col-lg-5">
+                    <div class="bg-login mt-2">
+                        <img src="{% static 'images/firstlook.jpg' %}" class="img-fluid d-none d-lg-block" alt="Irugapatru Game">
+                        <div class="auth-contain">                           
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+
+                <div class="col-lg-7">
+                    <div class="auth-box">
+                        <div class="mb-4 mb-md-5 text-center">
+                            <a href="{% url 'home' %}" class="auth-logo">
+                                <img src="{% static 'images/Title-Png.png' %}" height="119" width="" alt="">
+                            </a>
+                        </div>
+                        <div class="row justify-content-center align-items-center mt-4 mt-md-5 div-for-waiting" style="--bs-gutter-x: -0.5rem !important;background-color:#f4f2f2">
+                           <h3 class="fw-bold text-center">Waiting for partner to Join..!</h3>
+                        </div>
+
+                        
+                        <div class="auth-content  d-none div-question">
+                            <div class="row justify-content-center align-items-center mt-4 mt-md-5  male-female-chair-div" style="--bs-gutter-x: -0.5rem !important;background-color:#f4f2f2">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class=" male-chair" style="float:right !important; display: flex; flex-direction: row-reverse;">
+                                        </div>                                 
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="row">
+
+                                        <div class="female-chair"  style="float:right !important; display: flex;">
+    
+                                        </div>
+
+                                        
+                                    </div>                                 
+                                </div>
+    
+                              
+                           
+                                
+                                <!-- end col -->
+                            </div>
+                            <div class="mb-3 pb-3 text-center hide-question mt-1">
+                                <h4 class="fw-normal"><span class="fw-bold question-span" id="question" question=""></span></h4>                             
+                            </div>
+                           
+                            <div class="row justify-content-center hide-question" id="options" question="">
+                                <div class="col-6">
+                                    <button class="btn btn-dark shadow-none w-100 submit-answer" id="append_yes_value" value="" type="button">YES</button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-dark shadow-none w-100 submit-answer" id="append_no_value"  value="" type="button">NO</button>
+                                </div>
+                                <!-- end col -->
+                            </div><!-- end row -->
+
+                            <div class="goback-div mb-3 pb-3 text-center d-none mt-3">
+                                <div class="mb-3  pb-3 text-center">
+                                    <h4 class="fw-normal"><span class="fw-bold" style="color:#1a1657;">Release Date: October
+                                            6, 2023 </span></h4>
+                                </div>
+
+                                <div class="final-result-with-quotes row d-none">
+                                    <div class="col-12">
+                                        <div class="justify-content-center">
+                                            <img src="{% static 'image/couple.png' %}" class="img-fluid" height="90" width="90">
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-12 mt-3 ">
+                                        <h4>Love is a game that two can play and both can win..</h4>
+                                        <h4>Love You forever..</h4>
+                                               - <b id="partner-name">{{game.partner1}}/{{game.partner2}} </b>
+
+                                    </div>
+                                </div>
+
+                            
+    
+                                <div class="mb-6 mt-6 pb-3 text-center last-section-area">
+                                    <h4><span style="color:#1a1657;">Every Relationship is Unique and Precious.</span></h4>
+                                    There are highs and lows in it.
+                                    Nevertheless, the passion and empathy on each other is what drives it.
+                                    <div class="textstyle">
+    
+                                        <br>
+                                        <h5 class="fw-normal"><span class="fw-bold last-page-quote">Take a Deep
+                                                Breadth.</span></h5>
+                                        <p class="last-cap-txt">See where you stand & You know what do to.</p>
+                                    </div>
+                                </div>
+
+                               
+                                <div class="justify-content-center home-btn m-1 d-none" style="justify-content:center !important">
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <a href="{% url 'home' %}" ><button class="btn btn-dark shadow-none w-100" type="button" {{game.game_round}}> {% if game.game_round == 1 %} Go to Next Level {% else %} Back to Home {% endif%}</button></a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="https://bio.to/irugapatru"  target="_blank"><button class="btn btn-dark shadow-none w-100" type="button">Book Ticket</button></a>
+                                        </div>
+
+                                    </div>                          
+                                    
+                                </div>
+
+                                <div class="justify-content-center home-btn m-5" style="justify-content:center !important">                          
+                                    <button class="btn btn-dark shadow-none w-100r irugapatru" type="button">இறுகப்பற்று</button>
+                                </div>
+
+                            </div>
+                        </div><!-- auth content -->
+
+
+                        <input type="hidden" value="{{gender}}" id="gender">
+                    </div>
+                    <!-- end authbox -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+            <div class="footer text-center">Concept by <a href="http://irepute.in" target="_blank">repute</a></div>
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- END -->
+
+    <!-- bootstrap -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- CUSTOM JS -->
+    <script>
+
+        $(document).ready(function(){
+
+            let myName = "{{request.user}}";
+            {% if not is_completed %}
+
+            const socket = new WebSocket('ws://127.0.0.1:8000/ws/game/{{slug}}/');
+
+
+            {% endif %}
+        
+            let emptychairHtml ='<div class="col-1"><div class="client-images my-md-0"><img src="{% static "image/empty.png" %}" width="20" height="30"></div></div>';
+            let girlchairHtml ='<div class="col-1"><div class="client-images my-md-0"><img src="{% static "image/girl.png" %}" width="20" height="30"></div></div>';
+            let boychairHtml ='<div class="col-1"><div class="client-images my-md-0"><img src="{% static "image/boy.png" %}" width="20" height="30"></div></div>';
+            let bluechairHtml ='<div class="col-1"><div class="client-images my-md-0"><img src="{% static "image/bluechair.png" %}" width="20" height="30"></div></div>';
+
+            function updateFemaleChair(count){           
+                let femaleNegativecount = count+1;
+                let noofquestions = {{noofquestions}};                
+                let femaleimgHtml="";                
+                for (let i = 1; i <= noofquestions+1; i++) {        
+                    if(i == femaleNegativecount){
+                        femaleimgHtml = femaleimgHtml + girlchairHtml;
+                    }
+                    else if(i < femaleNegativecount){
+                        femaleimgHtml = femaleimgHtml + bluechairHtml;
+
+                    }
+                    else{
+                        femaleimgHtml = femaleimgHtml + emptychairHtml;        
+                    }      
+                }
+                $(".female-chair").html(femaleimgHtml);
+        
+            }
+        
+        
+            function updateMaleChair(count){       
+                let maleNegativecount = count+1;
+                let noofquestions = {{noofquestions}};                
+                let maleimgHtml="";                
+                for (let i = 1; i <= noofquestions+1; i++) {        
+                    if(i == maleNegativecount){
+                        maleimgHtml = maleimgHtml + boychairHtml;
+                    }
+                    else if(i < maleNegativecount){
+                        maleimgHtml = maleimgHtml + bluechairHtml;
+                        
+                    }
+                    else{
+                        maleimgHtml = maleimgHtml + emptychairHtml;        
+                    }      
+                }               
+                $(".male-chair").html(maleimgHtml);
+        
+            }
+        
+         
+
+                $('#options').on('click','.submit_answer',function(){
+                    event.preventDefault();              
+                    let selectedOption = $(this).attr('value');
+                    console.log(selectedOption);
+                    let questionId = $('#question').attr('question');
+                    let gender = $('#gender').val();
+                    $('#options .submit_answer').prop('disabled', true);                   
+                    socket.send(JSON.stringify(
+                    {
+                        type: "answer_submit",
+                        question : questionId,
+                        option : selectedOption,
+                        slug : "{{slug}}",
+                        gender : gender
+                    }                  
+                ))                  
+        
+            });
+
+            {% if not is_completed %}
+        
+            socket.onmessage = (e) => {
+                result = JSON.parse(e.data);
+                if (result.type == "joined"){                
+        
+                    $('#question').html(result.question.description);
+                    $('#question').attr('question',result.question.id);        
+                    let options = result.question.options;                    
+                    let optionsHtml = ""
+                    for(let i=0;i<options.length;i++){                       
+                        optionsHtml = optionsHtml + ' <div class="col-6"><button class="btn btn-dark shadow-none w-100 submit_answer" id="append_yes_value"  type="button" value="'+options[i].value+'">' +options[i].description+ '</button></div>';
+        
+                    }        
+                    $('#options').html(optionsHtml);
+        
+                    $('.div-question').removeClass('d-none');
+                    $('.div-for-waiting').addClass('d-none');
+                    femaleNegative = 0
+                    maleNegative = 0
+        
+                    updateFemaleChair(femaleNegative)
+                    updateMaleChair(maleNegative)
+                }
+        
+                else if (result.type == "next_question"){                  
+        
+                    $('#question').html(result.question.description);
+                    $('#question').attr('question',result.question.id);        
+                    let options = result.question.options;                    
+                    let optionsHtml = ""
+                    for(let i=0;i<options.length;i++){
+                        optionsHtml = optionsHtml + ' <div class="col-6"><button class="btn btn-dark shadow-none w-100 submit_answer" id="append_yes_value"  type="button" value="'+options[i].value+'">' +options[i].description+ '</button></div>';
+                    }
+        
+                    $('#options').html(optionsHtml);
+        
+                    $('.div-question').removeClass('d-none');
+                    $('.div-for-waiting').addClass('d-none');
+                    let femelaNeg = result.female_negative;
+                    let melaNeg = result.male_negative;
+                 
+                    updateFemaleChair(femelaNeg)
+                    updateMaleChair(melaNeg)
+                }
+        
+                else if (result.type == "show_report"){                  
+                    $('.hide-question').addClass('d-none');
+                    $('.div-for-waiting').addClass('d-none'); 
+                    $('.goback-div').removeClass('d-none'); 
+                    let partnerName = ""; 
+
+                    if(myName == result.male_name){
+                        partnerName = result.female_name;
+                    }
+                    else{
+                        partnerName = result.male_name;
+                    }
+                    $('#partner-name').text(partnerName+' ♡');                      
+                    updateFemaleChair(result.female_negative)        
+                    updateMaleChair(result.male_negative)
+                    socket.close();
+                    console.log('connection closed'); 
+
+                }
+                else if(result.type == "discontinued") {
+                    $('.div-question').addClass('d-none');  
+                    $('.div-for-waiting').removeClass('d-none');
+                }
+        
+                
+               
+            }
+        
+            socket.onclose = (e) => {
+                console.log("Socket closed!");
+             
+            }
+
+            {% endif %}
+
+            {% if is_completed %}
+                
+                    $('.hide-question').addClass('d-none');
+                    $('.div-for-waiting').addClass('d-none'); 
+                    $('.goback-div').removeClass('d-none');  
+                    $('.div-question').removeClass('d-none'); 
+                    $('#partner-name').text('{{partner_name}} ♡');               
+                    updateFemaleChair({{game.female_negative_mark}})        
+                    updateMaleChair({{game.male_negative_mark}})
+
+            {% endif %}
+
+            //show love
+            $(".irugapatru").click(function(){
+                $('.male-female-chair-div').addClass('d-none');
+                $('.final-result-with-quotes').removeClass('d-none');
+                $('.home-btn').removeClass('d-none');
+                $('.irugapatru').addClass('d-none');
+                $('.last-section-area').addClass('d-none');
+                
+            });
+                        
+         
+            });
+        
+        </script>
+  
+</body>
+
+</html>
+
+

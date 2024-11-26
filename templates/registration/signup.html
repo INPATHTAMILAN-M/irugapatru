@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="auth-box">
+        <div class="text-center">
+            <a href="javascript:void(0);" class="auth-logo">
+                <img src="{% static 'images/Title-Png.png' %}" class="img-fluid" alt="Irugapatru Game">
+            </a>
+        </div>
+        <div class="mb-3  pb-3 text-center">
+            <h4 class="fw-normal"><span class="fw-bold" style="color:#1a1657;">Release Date: October
+                    6, 2023 </span></h4>
+        </div>
+
+        <div class="row justify-content-center align-items-center">
+            <div class="mt-1">
+                <a href="{% url 'google_login' %}">
+                    <button class="btn-dark shadow-none w-100" type="submit">Sign up with <img src="{% static 'images/icons8-google-48.png' %}"></button>
+                </a>
+            </div>
+            <!-- end col -->
+        </div><!-- end row -->
+
+        <div class="mt-3 text-center">
+            <p class=" text-muted">OR</p>
+        </div>
+
+
+        <div class="auth-content">
+            <div class="mb-3 pb-3 text-center">
+                <h4 class="fw-normal"><span class="fw-bold">Create an account</span></h4>
+            </div>
+            <form method="POST" action="" id="signupform">
+                  
+                {% csrf_token %}
+                <div class="form-floating form-floating-custom mb-3">
+                   
+                        {{form.first_name}}
+                    <label for="id_first_name">Name</label>
+                </div>
+                <div class="form-floating form-floating-custom mb-3">
+                    {{form.mobile_no}}
+                    <label for="id_mobile_no">Mobile number</label>
+                </div>
+                <div class="form-floating form-floating-custom mb-3">  
+                                 
+                        {{form.email}}
+                    <label for="id_email">Email</label>
+                </div>
+                <p>{{ form.email.errors }}</p>
+                <div class="form-floating form-floating-custom mb-3">               
+                    {{form.gender}}
+                <label for="id_gender">Gender</label>
+            </div>
+            {{ form.password1.errors }}
+
+                <div class="form-floating form-floating-custom form-password auth-pass-inputgroup mb-3">               
+                    {{form.password1}}
+                    <button type="button" class="btn btn-link position-absolute h-100 end-0 top-0"
+                    id="password-addon">
+                    <i class="mdi mdi-eye-outline font-size-18 text-muted"></i>
+                </button>
+                    <label for="id_password1">Password</label>
+                </div>
+                <div class="form-floating form-floating-custom form-password auth-pass-inputgroup mb-3">               
+                    {{form.password2}}
+                    <button type="button" class="btn btn-link position-absolute h-100 end-0 top-0"
+                    id="password-addon2">
+                    <i class="mdi mdi-eye-outline font-size-18 text-muted"></i>
+                </button>
+                    <label for="id_password2">Confirm Password</label>
+                </div>
+
+                <p>{{ form.password2.errors }}</p>         
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                    <label class="form-check-label text-muted f-15" for="flexCheckDefault">
+                        By signing up, you agree to the <a target="_blank" href="{% url 'terms_and_conditions' %}">terms & conditions </a>  and <a  target="_blank"  href="{% url 'privacy_policy' %}">privacy policy</a>.
+                    </label>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-dark shadow-none w-100" type="submit">Register</button>
+                </div>
+                <hr>
+                <div class="mt-3 text-center">
+                    <p class="mb-0 text-muted">Already have an account ?<a href="{% url 'login' %}"
+                            class="text-success fw-bold text-decoraton-underline ms-1"> Sign in
+                        </a></p>
+                </div>
+           
+            </form><!-- end form -->
+
+
+
+        </div><!-- auth content -->
+    </div>
+    <!-- end authbox -->
+
+    <script>
+        document.getElementById('password-addon').addEventListener('click', function () {
+            var passwordInput = document.getElementById("id_password1");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });
+        document.getElementById('password-addon2').addEventListener('click', function () {
+            var passwordInput = document.getElementById("id_password2");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });
+    </script>
+{% endblock %}

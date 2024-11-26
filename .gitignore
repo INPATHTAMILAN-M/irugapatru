@@ -1,0 +1,24 @@
+# The following is the content to be added for Django in the .gitignore file:
+
+
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+*.log
+*.pot
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+*.log
+*.pot
+*.py[cod]
+*.egg-info/
+dist/
+build/

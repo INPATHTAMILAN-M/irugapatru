@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="auth-box">
+    <div class="mb-4 mb-md-5 text-center">
+        <a href="javascript:void(0);" class="auth-logo">
+            <img src="{% static 'images/Title-Png.png' %}" class="img-fluid" alt="Irugapatru Game">
+        </a>
+    </div>
+    <div class="auth-content">     
+        
+        <div class="form">
+            <div class="row">
+                <div class="col-12 align-items-center">                 
+                    <h4>You already played enough no of times.</h4>
+                    <div class="mt-3">
+                        <a href="{% url 'home' %}"><button class="btn btn-dark shadow-none w-100" type="submit">Menu</button></a>
+                    </div> 
+                </div>
+            </div>
+        </div>    
+    </div><!-- auth content -->
+</div>
+
+{% endblock %}

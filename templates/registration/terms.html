@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="auth-box">
+        <div class=" text-center">
+            <a href="{% url 'home' %}" class="auth-logo">
+                <img src="{% static 'images/Title-Png.png' %}" class="img-fluid" alt="Irugapatru Game">
+            </a>
+        </div>
+        <div class="mb-3  pb-3 text-center">
+            <h4 class="fw-normal"><span class="fw-bold" style="color:#1a1657;">Release Date: October
+                    6, 2023 </span></h4>
+        </div>
+
+        <div class="mb-6 mt-6 pb-3"
+            style="border-top:1px dashed #1a1664; padding:10px; text-align:left; height:450px; overflow-y:scroll;">
+            <h4><span style="color:#1a1657; text-align:left;">Terms and Conditions</span></h4>
+            <p>PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY, AND IF YOU ARE UNDER THE AGE OF
+                MAJORITY (AS DEFINED BELOW) IN YOUR JURISDICTION, MAKE SURE THAT YOUR PARENT OR
+                LEGAL GUARDIAN READS AND AGREES WITH THIS AGREEMENT ON YOUR BEHALF. IF YOU DO NOT
+                AGREE TO BE BOUND BY ALL OF THE TERMS AND CONDITIONS, YOU ARE NOT PERMITTED TO USE
+                OR ACCESS THIS WEBSITE. PLEASE PRINT A COPY OF THESE TERMS AND CONDITIONS FOR YOUR
+                RECORDS.</p>
+
+            <p>These Terms and Conditions constitute a contract between you and Potential Studios
+                LLP, a Limited Liability Partnership, and apply to all users of this Website. In
+                these Terms and Conditions “you” or “your” means any person or entity using this
+                Website, provided that if such person is under 18 years of age or the age of
+                majority in your jurisdiction, whichever is older (the “Age of Majority”), it also
+                includes such person's parent or legal guardian.
+            <p>
+
+            <h5>Terms and Conditions:</h5>
+            <p>This Website is provided by Potential Studios LLP, and its affiliates (collectively
+                referred to herein as “Potential Studios LLP” or “we,” “us,” “our” or other similar
+                pronouns). Your use of this Website is subject to the following terms and
+                conditions. These Terms and Conditions form a legally binding agreement that
+                contains important information about our Website and your permitted use of it.
+                Please read and understand these Terms and Conditions and the other information
+                referred to or linked to it prior to using this Website. We reserve the right to
+                change, update, or otherwise modify these Terms and Conditions at any time without
+                notice, so please review these Terms and Conditions every time you use this Website.
+            </p>
+            <h5>The use of this website is subject to the following terms of use:</h5>
+            <ul>
+                <li>The content of the pages of this website is for your general information and use
+                    only. It is subject to change without notice.</li>
+                <li>Neither we nor any third parties provide any warranty or guarantee as to the
+                    accuracy, timeliness, performance, completeness or suitability of the
+                    information and materials found or offered on this website for any particular
+                    purpose. You acknowledge that such information and materials may contain
+                    inaccuracies or errors and we expressly exclude liability for any such
+                    inaccuracies or errors to the fullest extent permitted by law.</li>
+                <li>Your use of any information or materials on this website is entirely at your own
+                    risk, for which we shall not be liable. It shall be your own responsibility to
+                    ensure that any products, services or information available through this website
+                    meet your specific requirements.</li>
+                <li>Potential Studios LLP does not make any warranty that the website is free from
+                    infection from viruses; nor does any provider of content to the site or their
+                    respective agents make any warranty as to the results to be obtained from use of
+                    the site. </li>
+            </ul>
+            <p>UNDER NO CIRCUMSTANCES INCLUDING, BUT NOT LIMITED TO, NEGLIGENCE, SHALL POTENTIAL
+                STUDIOS LLP OR ANY THIRD-PARTY CONTENT PROVIDER OR THEIR RESPECTIVE AGENTS BE LIABLE
+                FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT
+                OF THE USE OF OR INABILITY TO USE irugapatru.com WEB SITE, SOFTWARE AND/OR SERVICES,
+                EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOU AGREE TO
+                ASSUME ALL RISK RELATED TO YOUR USE OF POTENTIAL STUDIOS LLP WEBSITES AND SERVICES,
+                INCLUDING BUT NOT LIMITED TO, THE RISK OF COMMUNICATIONS WITH OTHER PEOPLE OR DAMAGE
+                TO YOUR COMPUTER.</p>
+            <ul>
+                <li>This website contains material which is owned by or licensed to us. This
+                    material includes, but is not limited to, the design, layout, look, appearance
+                    and graphics. Reproduction is prohibited other than in accordance with the
+                    copyright notice, which forms part of these terms and conditions.</li>
+                <li>All trademarks reproduced in this website, which are not the property of, or
+                    licensed to the operator, are acknowledged on the website.</li>
+                <li>Unauthorized use of this website may give rise to a claim for damages and/or be
+                    a criminal offense.</li>
+                <li>From time to time this website may also include links to other websites. These
+                    links are provided for your convenience to provide further information. They do
+                    not signify that we endorse the website(s). We have no responsibility for the
+                    content of the linked website(s).</li>
+                <li>Potential Studios LLP embeds content owned by us. Any game, and/or service that
+                    may be accessed via irugapatru.com is being provided to you us. Use of any such
+                    game, and/or service may be governed by this term of use , privacy policy.
+                    Potential Studios LLP disclaims any liability in connection with your usage of
+                    games, and/or services.</li>
+                <li>Your use of this website and any dispute arising out of such use of the website
+                    is subject to the laws of India and any other applicable jurisdiction.</li>
+                <li>In the even of presence of pre-screen all ads, Potential Studios LLP is not
+                    responsible for any ads that may appear on our sites via error or malware
+                    viruses. We accept no responsibility for any third-party advertisements that may
+                    appear on irugapatru.com websites.</li>
+            </ul>
+
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>        
+        $(document).ready(function(){    
+            $('.update-gender').click(function(){              
+                let gender = $(this).attr('gender');
+                $('#append-gender').val(gender);
+                $("#gender-form").submit();      
+            });  
+        });
+    </script>
+
+{% endblock %}

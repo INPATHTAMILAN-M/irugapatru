@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Irugapatru Game</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Irugapatru" />
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialdesignicons.min.css' %}" />
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+    <style>
+        .col-1{
+            width: 6.233333%;
+        }
+        .container{
+                width:82%;
+            }
+        .auth-box{
+            padding: 50px 50px;
+        }
+            @media (max-width: 425px){
+                .container{
+                    width:100%
+                }
+                .auth-box{
+                    padding: 0px 0px;
+                }
+            }
+        .auth-content{
+            margin-top:5%;
+        }
+
+        .errorlist li{
+            color: red !important;
+            list-style-type: none;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDR9B51YLE"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SDR9B51YLE');
+    </script>
+
+</head>
+
+<body>
+
+    <!-- START -->
+    <div class="account-pages">
+        <div class="container" style="width: 82%;">
+            <div class="row g-0 bg-white align-items-center">
+
+                <div class="col-lg-5">
+                    <div class="bg-login">
+                        <img src="{% static 'images/firstlook.jpg' %}" class="img-fluid d-none d-lg-block" alt="Irugapatru Game">
+                        <div class="auth-contain">                           
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+
+                <div class="col-lg-7">
+
+                    {% block content %}
+
+                    {% endblock %}
+
+                 
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+            <div class="footer text-center">Concept by <a href="http://irepute.in" target="_blank">repute</a></div>
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- END -->
+
+    <!-- bootstrap -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>
